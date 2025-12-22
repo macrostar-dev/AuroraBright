@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Listado de Entradas</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0 3%;
+            font-family: "Mulish", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: 0.2em;
+            background: linear-gradient(180deg, #00010B 100%, #3061e980);
+            color: #ffffff;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 5 columnas iguales */
+            gap: 20px; /* Espacio entre elementos */
+            list-style-type: none; /* Elimina viñetas en la lista */
+            padding: 0; /* Elimina el padding por defecto de la lista */
+        }
+
+        .skills-grid__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0px; /* Espacio entre el ícono y el botón */
+            text-align: center;
+        }
+        
+        .skill__img {
+            width: 200px; /* Tamaño del ícono */
+            height: 200px; /* Tamaño del ícono */
+            border-radius: 50%;
+        }
+
+        .enter-button {
+            background-color: #31aa78;
+            padding: 20px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: none;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            position: relative;
+            top: 5px; /* Ajusta según el tamaño de tu imagen */
+            z-index: 0;
+        }
+
+        .enter-button:hover {
+            background-color: #279965;
+        }
+
+        /* Estilo para pantallas móviles */
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+            }
+
+            .skill__img {
+                width: 240px; /* Tamaño del ícono para pantallas pequeñas */
+                height: 240px; /* Tamaño del ícono para pantallas pequeñas */
+            }
+
+            .enter-button {
+                padding: 15px 20px; /* Ajusta el padding para pantallas pequeñas */
+                font-size: 16px; /* Ajusta el tamaño del texto para pantallas pequeñas */
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">AuroraBright</div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul class="nav-links">
+                <label for="menu-toggle" class="close-icon">&times;</label>
+                <li><a href="/">Categorías</a></li>
+                <li><a href="/about">¿Quienes somos?</a></li>
+                <li><a href="/new">Crear un perfil</a></li>
+                <li><a href="#contacto" class="contact-button">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <ul class="skills-grid">
+        <li class="skills-grid__item skill">
+            <img class="skill__img" src="https://i0.wp.com/static.vecteezy.com/system/resources/previews/001/311/814/non_2x/programming-and-coding-concept-vector.jpg?w=1290&ssl=1" alt="Ícono de Programación">
+            <a class="enter-button" href="/Programación">Programación</a>
+        </li>
+        <li class="skills-grid__item skill">
+            <img class="skill__img" src="https://www.exportusa.us/media/004/tenuta-contabilita-statiuniti.m.png" alt="Ícono de Contabilidad y Finanzas">
+            <a class="enter-button" href="/Contabilidad_y_Finanzas">Contabilidad y Finanzas</a>
+        </li>
+        <li class="skills-grid__item skill">
+            <img class="skill__img" src="https://basketsnewhampshire.com/media/wysiwyg/pearl_theme/newyorkcitybaskets/BAKERY_Bottom_c.jpg" alt="Ícono de Repostería">
+            <a class="enter-button" href="/Repostería">Repostería</a>
+        </li>
+        <li class="skills-grid__item skill">
+            <img class="skill__img" src="https://www.mikrozelenje.si/wp-content/uploads/2021/02/Izdelek-brez-naslova-2021-02-12T111647.120-1024x1024.png" alt="Ícono de Jardinería">
+            <a class="enter-button" href="/Jardinería">Jardinería</a>
+        </li>
+        <li class="skills-grid__item skill">
+            <img class="skill__img" src="https://www.seasonsestateplanning.com/wp-content/uploads/2017/12/Seasons-Estate-Planning-768x683.jpg" alt="Ícono de Secretariado">
+            <a class="enter-button" href="/Secretariado">Secretariado</a>
+        </li>
+        <li class="skills-grid__item skill">
+            <img class="skill__img" src="https://th.bing.com/th/id/R.49cd5345b99604cd081e26973c6f6161?rik=ZQQGy9DVrj78kg&pid=ImgRaw&r=0" alt="Ícono de General">
+            <a class="enter-button" href="/all">General</a>
+        </li>
+        <li class="skills-grid__item skill">
+            <img class="skill__img" src="https://static.vecteezy.com/system/resources/previews/007/126/739/original/question-mark-icon-free-vector.jpg" alt="Ícono de Sin definir">
+            <a class="enter-button" href="/">Sin definir</a>
+        </li>
+    </ul>
+</body>
+</html>
+

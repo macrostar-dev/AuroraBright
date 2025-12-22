@@ -1,0 +1,344 @@
+/* Ajustes generales para el body */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Evita el desplazamiento horizontal no deseado */
+  background: linear-gradient(180deg, #00010B 100%, #3061e980); 
+}
+
+header {
+margin-bottom: 70px; /* Añade un margen inferior al header */
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 20px;
+background-color: rgba(0, 0, 0, 0.5);
+position: fixed; /* Fija la barra en la parte superior */
+top: 0; /* Se asegura de que esté en la parte superior */
+left: 0; /* Alinea la barra a la izquierda */
+width: 99%; /* Asegura que ocupe todo el ancho */
+z-index: 1000; /* Asegura que la barra esté encima de otros contenidos */
+}
+
+/* Estilo del logo */
+.navbar .logo {
+  color: white;
+  font-size: 1.5em;
+}
+
+/* Estilos para los enlaces del menú */
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links li {
+  margin: 0 15px;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar .nav-links a:hover {
+  color: #ddd;
+}
+
+/* Estilo del botón de contacto */
+.navbar .contact-button {
+  background-color: #31aa78;
+  padding: 7px 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-sizing: border-box;
+}
+
+.navbar .contact-button:hover {
+  background-color: #26f87386;
+  color: #F8FAFC;
+}
+
+/* Icono del menú hamburguesa */
+.navbar .menu-icon {
+  display: none;
+  font-size: 1.8em;
+  color: white;
+  cursor: pointer;
+}
+
+/* Icono de cierre (X) */
+.navbar .close-icon {
+  display: none;
+  font-size: 4em;
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+/* Esconder el checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+      display: flex;
+      flex-direction: column;
+      background-color: #333333; /* Fondo semitransparente */
+      border-radius: 20px; /* Bordes redondeados */
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      padding-top: 100px; /* Deja espacio para el logo y la "X" */
+      transform: translateX(100%); /* Oculta el menú fuera de la pantalla */
+      transition: transform 0.3s ease;
+      z-index: 999; /* Asegura que el menú de navegación esté encima del contenido */
+  }
+
+  .navbar .nav-links li {
+      margin: 20px 0;
+      text-align: center;
+  }
+
+  .navbar .menu-icon {
+      display: block;
+   
+      margin-right: 30px;
+  }
+
+  /* Mostrar el icono de cierre (X) cuando el menú está abierto */
+  #menu-toggle:checked + .menu-icon + .nav-links .close-icon {
+      display: block;
+  }
+
+  #menu-toggle:checked + .menu-icon + .nav-links {
+      transform: translateX(0); /* Desplaza el menú a la vista */
+  }
+
+  /* Ocultar el ícono del menú cuando el menú está abierto */
+  #menu-toggle:checked + .menu-icon {
+      display: none;
+  }
+}
+
+
+
+
+
+
+/*Estilo para el apartado de crear perfil*/
+.container {
+margin-top: 40px; /* Añade un margen superior para separar el contenedor del menú */
+max-width: 600px; /* Reducción del ancho máximo del contenedor */
+margin: auto;
+background-color: #EAEEEF;
+padding: 15px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+display: flex;
+flex-direction: column;
+gap: 1px; /* Reduce el espacio entre los elementos del formulario */
+}
+
+.form label {
+font-weight: bold;
+color: #333;
+font-size: 16px; 
+margin-bottom: 3px; /* Espacio más pequeño entre el label y el input */
+}
+
+.form__input {
+background: #392657;
+border: 2px solid #a178b9;
+color: #fff;
+padding: 10px;
+border-radius: 10px;
+font-size: 18px; 
+margin-bottom: 10px; /* Reduce el espacio debajo de los inputs */
+}
+
+
+.button {
+background: #0F172A;
+border: 1px solid #11c278;
+color: white;
+border-radius: 50px;
+padding: 15px 30px;
+font-size: 20px;
+cursor: pointer;
+transition: background 0.2s, color 0.2s;
+}
+
+.button:hover {
+background: #43DB9C;
+color: #F8FAFC;
+}
+
+a {
+color: #11c278;
+font-weight: bold;
+text-decoration: none;
+}
+
+/* Ajustes adicionales para los labels e inputs */
+.form label {
+margin-bottom: 5px; /* Espaciado reducido entre label e input */
+}
+
+.form__input {
+margin-bottom: 15px; /* Espaciado controlado entre inputs */
+}
+
+/* Media query para ajustar los estilos en dispositivos móviles */
+@media (max-width: 768px) {
+  .container {
+    max-width: 75%; /* Ocupa todo el ancho en pantallas pequeñas */
+    padding: 10px; /* Padding ajustado */
+  }
+
+  .form label {
+    font-size: 14px; /* Fuente ajustada para dispositivos móviles */
+  }
+
+  .form__input {
+    font-size: 16px; /* Fuente ajustada para dispositivos móviles */
+  }
+
+  .button {
+    font-size: 18px; /* Botón más pequeño para móviles */
+    padding: 12px 20px; /* Padding ajustado para móviles */
+  }
+}
+
+/*Prueba*/
+/* Estilo para la barra lateral */
+/* Estilo para un contenedor con barra de desplazamiento */
+.scrollable-container {
+  max-height: 400px; /* Ajusta esta altura según tus necesidades */
+  overflow-y: scroll; /* Habilita el desplazamiento vertical */
+  border: 1px solid #ccc; /* Opcional: agregar un borde para definir el contenedor */
+  padding: 10px; /* Opcional: agregar padding para el contenido dentro del contenedor */
+}
+
+/* Estilo para la barra de desplazamiento personalizada */
+.scrollable-container::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra de desplazamiento */
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color de la barra */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.scrollable-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color al pasar el cursor */
+}
+
+
+
+
+
+
+/*Casilla de perfiles*/
+.containers-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 70px; /* Añade un margen superior para separar los contenedores de la barra de navegación */
+}
+.social-links .social-icon {
+  font-size: 50px;
+  color: #000; /* Cambia el color según sea necesario */
+  margin: 0 10px; /* Espacio entre los iconos */
+}
+.container {
+  margin: 20px;
+  flex: 1 1 calc(33.333% - 40px); /* Ajusta el ancho de los contenedores */
+  box-sizing: border-box;
+  overflow: hidden; /* Evita que el contenido se desborde */
+  word-wrap: break-word; /* Asegura que las palabras largas se ajusten dentro del contenedor */
+  max-width: 100%; /* Asegura que el contenedor no se expanda más allá de su área */
+}
+.about__info {
+  display: flex;
+  align-items: center;
+}
+.info-block__text {
+  margin-right: 20px;
+  white-space: normal; /* Asegura que el texto haga saltos de línea cuando sea necesario */
+  overflow-wrap: break-word; /* Controla el desbordamiento de palabras largas */
+  word-break: break-word; /* Rompe las palabras si son muy largas */
+  max-width: 100%; /* Limita el texto al ancho máximo del contenedor */
+}
+.info-block__img {
+  border-radius: 50%;
+}
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espacio entre ítems */
+  justify-content: center; /* Centra los ítems horizontalmente */
+}
+.skills-grid__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido horizontalmente */
+  text-align: center; /* Centra el texto */
+}
+.skill__img {
+  margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+}
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Esta línea centra los íconos horizontalmente */
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+      flex-direction: column;
+      gap: 20px; /* Espacio entre ítems */
+  }
+  .skills-grid__item {
+      text-align: center;
+  }
+  .social-links {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px; /* Añade espacio arriba de los íconos */
+  }
+  .container {
+      flex: 1 1 auto; /* Ajusta el tamaño para pantallas pequeñas */
+      max-width: 90%; /* El contenedor ocupará un máximo del 90% del ancho de la pantalla */
+      margin: 10px auto; /* Centra el contenedor horizontalmente */
+      
+  }
+  .about__info {
+      flex-direction: column; /* Coloca los elementos en una columna */
+      align-items: flex-start; /* Alinea los elementos al inicio */
+  }
+  
+  .info-block__img {
+      margin-top: 20px; /* Añade un espacio entre el texto y la imagen */
+      align-self: center; /* Alinea la imagen al centro en pantallas pequeñas */
+  }
+}

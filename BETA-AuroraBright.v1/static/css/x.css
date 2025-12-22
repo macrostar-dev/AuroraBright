@@ -1,0 +1,525 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap");
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0 3%;
+  font-family: "Mulish", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.2em;
+  background: linear-gradient(180deg, #00010B 100%, #3061e980);
+  color: #ffffff;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+h1, h2 {
+  font-weight: 700;
+  font-size: 42px;
+}
+
+img {
+  object-fit: contain;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 70px; /* Aumento en el tamaño del logo */
+  height: 70px; /* Aumento en el tamaño del logo */
+  border-radius: 50%;
+}
+
+.logo-name {
+  font-size: 28px; /* Ajusta el tamaño del nombre del logo */
+  font-weight: 700;
+}
+
+.main {
+  margin-top: 80px; /* Ajustar para evitar que el contenido quede debajo del menú */
+}
+
+.main-list {
+  display: flex;
+  gap: 30px; /* Reducir el espacio entre los elementos del menú */
+}
+
+.list-item__link {
+  position: relative;
+  font-size: 20px; /* Ajustar el tamaño de fuente si es necesario */
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list-item__link::after {
+  position: absolute;
+  transition: width 0.2s;
+  content: "";
+  border-radius: 10px;
+  width: 55%;
+  height: 3px;
+  bottom: -12px;
+  background: #43DB9C;
+  box-shadow: 0px 4px 4px #26f87386;
+}
+
+.list-item__link:hover::after {
+  width: 100%;
+}
+
+.home__title {
+  letter-spacing: 0.3em;
+  font-size: 70px;
+  text-align: center;
+  color: #8c34d5;
+  line-height: 1;
+  text-shadow: 0px 4px 4px #603c80a2;
+}
+
+.home__subtitle {
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  line-height: 1;
+}
+
+.about {
+  margin-bottom: 200px;
+}
+
+.about__title {
+  font-size: 60px;
+  position: relative;
+  text-align: left;
+  color: #a42c8a;
+  line-height: 1;
+  text-shadow: 0px 4px 4px #9e3689b0;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin-bottom: 60px;
+}
+
+.about__title::after {
+  position: absolute;
+  content: "";
+  border-radius: 10px;
+  width: 60%;
+  height: 1px;
+  bottom: -13px;
+  background: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.info-block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-block__text {
+  width: 100%;
+}
+
+.info-block__img {
+  align-self: center;
+}
+
+.skills {
+  margin-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.skills__title {
+  font-size: 60px;
+  position: relative;
+  text-align: left;
+  color: #10a363;
+  line-height: 1;
+  text-shadow: 0px 4px 4px #4f76597b;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.skills__title::after {
+  position: absolute;
+  content: "";
+  border-radius: 10px;
+  width: 60%;
+  height: 1px;
+  bottom: -13px;
+  background: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Ajustar el espacio entre ítems */
+}
+
+.skills-grid__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* Aumento en el espacio entre el ícono y el botón */
+  text-align: center;
+}
+
+.skill__img {
+  width: 200px; /* Aumento en el tamaño del ícono */
+  height: 200px; /* Aumento en el tamaño del ícono */
+  object-fit: contain;
+}
+
+.skill__button {
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+  font-size: 18px; /* Aumento en el tamaño del texto del botón */
+  padding: 10px 25px; /* Aumento en el padding del botón */
+}
+
+.skill__button:hover {
+  color: #cc8bf2;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.project__img {
+  border-radius: 30px;
+}
+
+.project__link {
+  position: relative;
+  font-size: 40px;
+  font-weight: 700;
+  color: #e1a1e9;
+}
+
+.project__link::after {
+  position: absolute;
+  transition: width 0.2s;
+  content: "";
+  border-radius: 10px;
+  width: 50%;
+  height: 1px;
+  bottom: -3px;
+  background: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.project__link:hover::after {
+  width: 100%;
+}
+
+.feedback {
+  margin-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.feedback__title {
+  font-size: 60px;
+  position: relative;
+  text-align: left;
+  color: #10a363;
+  line-height: 1;
+  text-shadow: 0px 4px 4px #4f76597b;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.feedback__title::after {
+  position: absolute;
+  content: "";
+  border-radius: 10px;
+  width: 60%;
+  height: 1px;
+  bottom: -13px;
+  background: #fff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.form label {
+  width: 100%;
+}
+
+.form__input {
+  width: 100%;
+  font: inherit;
+  background: #392657;
+  border: 2px solid #a178b9;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.25));
+}
+
+.form__input::placeholder {
+  color: #fff;
+}
+
+.form__input:active,
+.form__input:focus,
+.form__textarea:active,
+.form__textarea:focus {
+  outline: 1px solid #43DB9C;
+}
+
+.form__textarea {
+  width: 100%;
+  font: inherit;
+  background: #392657;
+  border: 2px solid #a178b9;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  min-height: 150px;
+  resize: vertical;
+  filter: drop-shadow(5px 5px 4px rgba(0, 0, 0, 0.25));
+}
+
+.form__textarea::placeholder {
+  color: #fff;
+}
+
+.form__submit {
+  background: #0F172A; /* Fondo oscuro */
+  border: 1px solid #18a46ad1; /* Borde morado */
+  color: white; /* Color del texto */
+  border-radius: 20px;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  width: 200px;
+  height: 50px;
+  margin: 10px 5px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-sizing: border-box;
+}
+
+.form__submit:hover {
+  background: #18a46ad1; /* Fondo al pasar el cursor */
+  color: #F8FAFC; /* Color del texto al pasar el cursor */
+}
+
+/* Estilos adicionales para ajustar el espacio entre secciones */
+.main {
+  padding: 30px 0;
+}
+
+.about {
+  margin-bottom: 80px;
+}
+
+.skills {
+  margin-top: 80px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background-color: #EAEEEF;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+h1 {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+p {
+  color: #666;
+}
+
+/* Contenedor para el ícono de repostería y su botón */
+.bakery-icon-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos horizontalmente */
+  justify-content: center; /* Centra los elementos verticalmente */
+  gap: 15px; /* Espacio entre el ícono y el botón */
+  height: 100%; /* Asegura que el contenedor ocupe todo el espacio disponible */
+}
+
+.bakery-icon {
+  width: 80px; /* Tamaño del ícono */
+  height: 80px; /* Tamaño del ícono */
+  object-fit: contain;
+}
+
+.button {
+  background: #0F172A; /* Fondo oscuro */
+  border: 1px solid #11c278; /* Borde morado */
+  color: white; /* Color del texto */
+  border-radius: 50px; /* Bordes redondeados */
+  padding: 0 40px; /* Padding */
+  text-align: center; /* Alineación del texto */
+  text-decoration: none; /* Sin subrayado */
+  display: flex; /* Usar flexbox */
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
+  font-size: 22px; /* Tamaño de la fuente */
+  width: 220px; /* Ancho del botón */
+  height: 60px; /* Altura del botón */
+  margin: 10px 5px; /* Espaciado externo */
+  cursor: pointer; /* Cambiar cursor al pasar por encima */
+  transition: background 0.2s, color 0.2s; /* Transición suave */
+  box-sizing: border-box; /* Incluir borde y padding en el tamaño total */
+}
+
+.button:hover {
+  background: #43DB9C; /* Fondo al pasar el cursor */
+  color: #F8FAFC; /* Color del texto al pasar el cursor */
+}
+
+
+.button:hover {
+  background: #11c278; /* Fondo al pasar el cursor */
+  color: #F8FAFC; /* Color del texto al pasar el cursor */
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+  .info-block {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    text-align: center; /* Centra el texto */
+  }
+
+  .info-block__text {
+    margin-bottom: 20px; /* Espacio entre el texto y la imagen */
+  }
+
+  .info-block__img {
+    width: 100%; /* Ancho completo para ocupar el contenedor */
+    max-width: 250px; /* Ancho máximo para la imagen */
+    margin-top: 20px; /* Espacio entre el texto y la imagen */
+  }
+
+  .main-nav {
+    display: flex; /* Asegura que la navegación sea flexible */
+    justify-content: center; /* Centra los elementos horizontalmente */
+  }
+
+  .main-list {
+    display: flex; /* Asegura que la lista principal sea flexible */
+    gap: 15px; /* Ajuste del espacio entre elementos del menú en móvil */
+  }
+
+  .main-list__item {
+    list-style: none; /* Quita los estilos de lista por defecto */
+  }
+
+  .list-item__link {
+    text-decoration: none; /* Quita el subrayado del enlace */
+    color: #ffffff; /* Color del texto */
+    font-weight: 700; /* Peso de la fuente */
+    padding: 10px 15px; /* Ajusta el padding del enlace */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: rgba(0, 0, 0, 0.3); /* Color de fondo */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+  }
+
+  .list-item__link:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Cambia el color de fondo al pasar el cursor */
+  }
+}
+
+@media (max-width: 480px) {
+  .bakery-icon-button-container {
+    flex-direction: column;
+    gap: 15px; /* Ajustar el espacio entre el ícono y el botón */
+  }
+
+  .bakery-icon {
+    width: 50px; /* Ajuste del tamaño del ícono en dispositivos más pequeños */
+    height: 50px;
+  }
+
+  .button {
+    font-size: 16px; /* Ajuste del tamaño de fuente en dispositivos más pequeños */
+    width: auto; /* Ajustar el ancho en dispositivos más pequeños */
+    padding: 0 20px; /* Ajuste del padding en dispositivos más pequeños */
+    height: 50px; /* Ajuste de la altura en dispositivos más pequeños */
+  }
+}

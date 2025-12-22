@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Listado de Entradas</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">AuroraBright</div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul class="nav-links">
+                <label for="menu-toggle" class="close-icon">&times;</label>
+                <li><a href="/">Categorías</a></li>
+                <li><a href="/about">¿Quienes somos?</a></li>
+                <li><a href="/new">Crear un perfil</a></li>
+                <li><a href="#contacto" class="contact-button">Contacto</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <div class="containers-wrapper">
+        {% for entry in entries %}
+        <div class="container">
+            <h1>{{ entry.name }}</h1>
+            <div class="about__info info-block">
+                <p class="info-block__text">{{ entry.text }}</p>
+                <img
+                    class="info-block__img"
+                    src="{{ entry.img }}"
+                    width="210"
+                    height="210"
+                />
+            </div>
+            <div class="social-links">
+                <a href="{{ entry.instagram }}" target="_blank">
+                    <i class="fab fa-instagram social-icon"></i>
+                </a>
+                <a href="{{ entry.facebook }}" target="_blank">
+                    <i class="fab fa-facebook-f social-icon"></i>
+                </a>
+                <a href="{{ entry.etc }}" target="_blank">
+                    <i class="fas fa-globe social-icon"></i>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+

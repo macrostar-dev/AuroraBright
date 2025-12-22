@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Agregar Nueva Entrada</title>
+    <style>
+        
+        header {
+            margin-bottom: 200px; /* Añade un margen inferior al header */
+          }
+          /* Asegúrate de que el body no tenga desbordamientos horizontales inesperados */
+          body {
+              margin: 0;
+              font-family: Arial, sans-serif;
+              overflow-x: hidden; /* Evita el desplazamiento horizontal no deseado */
+              background: linear-gradient(180deg, #00010B 100%, #3061e980);
+          }
+          
+          /* Ajusta la altura del contenedor para permitir el desplazamiento vertical */
+          .container {
+              margin-top: 40px; /* Añade un margen superior para separar el contenedor del menú */
+              max-width: 600px; /* Reducción del ancho máximo del contenedor */
+              margin: auto;
+              background-color: #EAEEEF;
+              padding: 15px;
+              border-radius: 8px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              overflow-y: auto; /* Permite el desplazamiento vertical si el contenido es largo */
+          }
+          
+          /* Corrige el error en el HTML */
+          .header {
+              margin-bottom: 200px; /* Añade un margen inferior al header */
+          }
+          
+          /* Ajustes para la barra lateral */
+          .sidebar {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 250px; /* Ancho de la barra lateral */
+              height: 100vh; /* Altura completa de la pantalla */
+              background-color: #111; /* Color de fondo */
+              overflow-y: auto; /* Permite el desplazamiento vertical */
+              padding-top: 20px; /* Espacio superior */
+              z-index: 1000; /* Asegura que la barra esté sobre el contenido principal */
+          }
+          @media (max-width: 768px) {
+            .container {
+              max-width: 90%; /* Ocupa todo el ancho en pantallas pequeñas */
+              padding: 10px; /* Padding ajustado */
+            }
+          
+            .form label {
+              font-size: 14px; /* Fuente ajustada para dispositivos móviles */
+            }
+          
+            .form__input {
+              font-size: 16px; /* Fuente ajustada para dispositivos móviles */
+            }
+          
+            .button {
+              font-size: 18px; /* Botón más pequeño para móviles */
+              padding: 12px 20px; /* Padding ajustado para móviles */
+            }
+          }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">AuroraBright</div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul class="nav-links">
+                <label for="menu-toggle" class="close-icon">&times;</label>
+                <li><a href="/">Categorías</a></li>
+                <li><a href="/about">¿Quienes somos?</a></li>
+                <li><a href="/new">Crear un perfil</a></li>
+                <li><a href="#contacto" class="contact-button">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container scrollable-container">
+        <form action="{{ url_for('add_entry') }}" method="post" class="form">
+            <label for="opciones">Opción:</label>
+            <select name="opciones" id="opciones" class="form__input" required>
+                <option value="Opción 1">Programación</option>
+                <option value="Opción 2">Contabilidad y Finanzas</option>
+                <option value="Opción 3">Repostería</option>
+                <option value="Opción 4">Jardinería</option>
+                <option value="Opción 5">Secretariado</option>
+                <!-- Añadir más opciones si es necesario -->
+            </select><br>
+
+            <label for="name">Ingrese tu nombre:</label>
+            <input type="text" id="name" name="name" class="form__input" required><br>
+
+            <label for="text">Ingrese una descripción:</label>
+            <input type="text" id="description" name="text" class="form__input" required><br>
+
+            <label for="instagram">Ingrese un enlace de Instagram:</label>
+            <input type="text" id="instagram" name="instagram" class="form__input" required><br>
+
+            <label for="facebook">Ingrese un enlace de Facebook:</label>
+            <input type="text" id="facebook" name="facebook" class="form__input" required><br>
+
+            <label for="etc">Ingrese otro enlace:</label>
+            <input type="text" id="etc" name="etc" class="form__input" required><br>
+          
+            <label for="img">Ingrese el link para tu foto de perfil:</label>
+            <input type="text" id="img" name="img" class="form__input" required><br>
+
+            <button type="submit" class="button">Enviar</button>
+        </form>
+        <br>
+        <a href="/">Volver al Listado de Entradas</a>
+    </div>
+</body>
+</html>
+

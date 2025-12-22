@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>About</title>
+    <style>
+        /* Importación de fuente */
+        @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap");
+        
+        /* Estilos globales */
+        body {
+          margin: 0;
+          padding: 0 3%;
+          font-family: "Mulish", sans-serif;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 20px;
+          letter-spacing: 0.2em;
+          background: linear-gradient(180deg, #00010B 100%, #3061e980);
+          color: #ffffff;
+        }
+        
+        h1, h2, p {
+          margin: 0;
+        }
+        
+        /* Sección "Acerca de mí" */
+        .main {
+          margin-top: 80px; /* Para evitar que el contenido quede debajo del menú */
+          padding: 30px 0;
+        }
+        
+        .about {
+          margin-bottom: 80px;
+        }
+        
+        .info-block {
+          display: flex;
+          justify-content: space-between;
+        }
+        
+        .info-block__img {
+          align-self: center;
+          max-width: 250px;
+          margin-top: 20px;
+        }
+        
+        /* Sección "Competencias" (Integrantes) */
+        .skills {
+          margin-top: 80px;
+          margin-bottom: 200px;
+          display: flex;
+          flex-direction: column;
+          gap: 80px;
+        }
+        
+        .skills__title {
+          font-size: 60px;
+          color: #10a363;
+          line-height: 1;
+          text-shadow: 0px 4px 4px #4f76597b;
+        }
+        
+        .skills-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 20px; /* Ajustar el espacio entre ítems */
+        }
+        
+        .skills-list__skill {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 15px; /* Espacio entre ícono y texto */
+        }
+        
+        .skill__img {
+          width: 200px;
+          height: 200px;
+          object-fit: contain;
+        }
+        
+        /* Botón */
+        .button {
+          background: #0F172A;
+          border: 1px solid #11c278;
+          color: white;
+          border-radius: 50px;
+          padding: 0 40px;
+          font-size: 22px;
+          width: 220px;
+          height: 60px;
+          cursor: pointer;
+          transition: background 0.2s, color 0.2s;
+        }
+        
+        .button:hover {
+          background: #43DB9C;
+          color: #F8FAFC;
+        }
+        
+        /* Responsividad */
+        @media (max-width: 768px) {
+          .info-block {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+          }
+        
+          .info-block__img {
+            width: 100%;
+          }
+        
+          .skills-list {
+            flex-direction: column;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .skill__img {
+            width: 150px;
+            height: 150px;
+          }
+        
+          .button {
+            font-size: 16px;
+            width: auto;
+            padding: 0 20px;
+            height: 50px;
+          }
+        }
+        
+        /* Estilos para hacer las imágenes redondas */
+        .info-block__img, .skill__img {
+            border-radius: 50%; /* Hace las imágenes redondas */
+            object-fit: cover; /* Asegura que la imagen se recorte adecuadamente dentro del contenedor circular */
+        }
+
+        .cdf {
+            color: #ffffff; /* Cambia esto al color deseado */
+        }
+        
+
+        /* Alineación de las imágenes y nombres de los integrantes */
+        .skills-list {
+            display: flex; /* Usa flexbox para alinear horizontalmente */
+            flex-wrap: wrap; /* Permite que las imágenes se envuelvan si no hay suficiente espacio */
+            justify-content: center; /* Centra las imágenes en el contenedor */
+            gap: 30px; /* Espacio entre los elementos de la lista */
+            padding: 0; /* Elimina el padding por defecto de la lista */
+            margin: 0; /* Elimina el margin por defecto de la lista */
+        }
+
+        .skill {
+            display: flex;
+            flex-direction: column; /* Apila los elementos en una columna */
+            align-items: center; /* Centra los elementos en el eje transversal */
+            text-align: center; /* Centra el texto debajo de cada imagen */
+        }
+
+        .skill__img {
+            margin-bottom: 10px; /* Menor espacio entre la imagen y el nombre */
+            width: 150px; /* Tamaño fijo para la imagen */
+            height: 150px; /* Tamaño fijo para la imagen */
+        }
+
+        .info-block__img {
+            width: 300px; /* Tamaño fijo para el logo */
+            height: 300px; /* Tamaño fijo para el logo */
+        }
+
+        /* Media queries para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .skills-list {
+                gap: 20px; /* Reduce el espacio entre los elementos en pantallas pequeñas */
+            }
+
+            .skill__img {
+                width: 120px; /* Ajusta el tamaño de las imágenes en pantallas pequeñas */
+                height: 120px;
+            }
+
+            .info-block__img {
+                width: 250px; /* Ajusta el tamaño del logo en pantallas pequeñas */
+                height: 250px;
+            }
+
+            .main__about, .main__skills {
+                padding: 10px; /* Añade un poco de relleno a las secciones */
+            }
+
+            .skill__info {
+                font-size: 14px; /* Reduce el tamaño del texto en pantallas pequeñas */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skills-list {
+                flex-direction: column; /* Apila los elementos verticalmente en pantallas muy pequeñas */
+                align-items: center;
+            }
+
+            .skill__info {
+                font-size: 12px; /* Reduce aún más el tamaño del texto en pantallas muy pequeñas */
+            }
+
+            .info-block__img {
+                width: 200px; /* Ajusta el tamaño del logo en pantallas muy pequeñas */
+                height: 200px;
+            }
+        }      
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">AuroraBright</div>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
+            <ul class="nav-links">
+                <label for="menu-toggle" class="close-icon">&times;</label>
+                <li><a href="/">Categorías</a></li>
+                <li><a href="/about">¿Quienes somos?</a></li>
+                <li><a href="/new">Crear un perfil</a></li>
+                <li><a href="#contacto" class="contact-button">Contacto</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <main class="main">
+        <!-- Acerca de mí -->
+        <section class="main__about about" id="about">
+            <h2 class="skills__title">AURORA BRIGHT</h2>
+            <div class="about__info info-block">
+                <p class="cdf"> Este proyecto busca promover mayor accesibilidad para encontrar empleo, ya que a menudo es difícil conseguir trabajo debido a la necesidad de buscar en múltiples páginas web, publicidad, ferias de empleo y consultas directas. Además, muchas empresas requieren varios y específicos requisitos, mientras que los empleos con menos exigencias suelen tener salarios bajos.<br><br>
+                    Nuestro proyecto reunirá todo tipo de oportunidades de empleo y puestos de trabajo en un sitio web, permitiendo a las personas buscar opciones que se ajusten a sus habilidades y conocimientos, facilitando así el acceso a oportunidades laborales adecuadas y bien remuneradas.<br><br>
+                </p>
+                <img
+                    class="info-block__img"
+                    src="{{ url_for('static', filename='img/logo.png') }}"
+                    alt="Logo"
+                    width= "200"
+                    height= "200"
+                />
+            </div>
+        </section>
+
+        <!-- Sección de competencias -->
+        <section class="main__skills skills" id="skills">
+            <h2 class="skills__title">Integrantes</h2>
+            <ul class="skills__list skills-list">
+                <li class="skills-list__skill skill">
+                    <img
+                        class="skill__img"
+                        src="{{ url_for('static', filename='img/Isaac.png') }}"
+                        alt="Isaac Ruiz Ortiz"
+                    />
+                    <span class="skill__info">Isaac Ruiz Ortiz</span>
+                </li>
+                <li class="skills-list__skill skill">
+                    <img
+                        class="skill__img"
+                        src="{{ url_for('static', filename='img/Alex.png') }}"
+                        alt="Alex Leiva"
+                    />
+                    <span class="skill__info">Alex Leiva</span>
+                </li>
+                <li class="skills-list__skill skill">
+                    <img
+                        class="skill__img"
+                        src="{{ url_for('static', filename='img/Isaac_V.png') }}"
+                        alt="Isaav Vargas"
+                    />
+                    <span class="skill__info">Isaav Vargas</span>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
