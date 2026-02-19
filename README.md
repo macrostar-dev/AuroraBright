@@ -38,10 +38,21 @@
 
 ---
 
-## ⚙️ Local Setup
+## 📂 Project Structure & HTML Setup
 
-Follow these steps to get the environment ready:
+For Flask to recognize your files, your project **must** be organized as follows:
 
-1. **Install Dependencies**
+```text
+aurora-bright/
+├── main.py              # Main Flask logic
+├── static/              # Static assets
+│   └── css/
+│       └── style.css    # Custom styles & gradients
+├── templates/           # HTML folder (Mandatory for render_template)
+│   ├── index.html       # Home & Category selection
+│   ├── about.html       # Project info
+│   ├── cate.html        # Category display view
+│   └── new_entry.html   # Profile creation form
+└── simple_db.db        # SQLite database (Auto-generated)
    ```bash
    pip install flask flask_sqlalchemy
