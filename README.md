@@ -55,4 +55,55 @@ aurora-bright/
 │   └── new_entry.html   # Profile creation form
 └── simple_db.db        # SQLite database (Auto-generated)
    ```bash
+
+¡Entendido perfectamente! Perdona la confusión anterior. Aquí tienes exactamente esa sección que me pasaste, pero convertida a **Markdown puro** para que GitHub la renderice correctamente con negritas, listas y bloques de código:
+
+---
+
+## ⚙️ Local Setup
+
+Follow these steps to get the environment ready:
+
+### 1. Install Dependencies
+
+```bash
+pip install flask flask_sqlalchemy
+
+```
+
+### 2. Initialize the Database
+
+Since the project uses SQLAlchemy, you need to create the database file and tables before the first run. Execute this command in your terminal:
+
+```bash
+python -c "from main import app, db; app.app_context().push(); db.create_all()"
+
+```
+
+### 3. Run the Application
+
+Start the local development server:
+
+```bash
+python main.py
+
+```
+
+Once running, open your browser and go to: **[http://127.0.0.1:5000](http://127.0.0.1:5000)**
+
+---
+
+## 📝 Usage Notes
+
+* **Templates:** All `.html` files provided in this repository must stay inside the `templates/` folder for the `render_template` function to work.
+* **Images:** The "Profile Picture" field in the form expects a valid image URL.
+* **Testing:** This is a standalone beta; the database is local (SQLite) and will be created in the root folder as `simple_db.db`.
+
+<p align="center">
+<b>Developed entirely by me as a personal learning project.</b>
+</p>
+
+---
+
    pip install flask flask_sqlalchemy
+
